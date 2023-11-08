@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div>
+        <h1>This is my Calculator</h1>
+    </div>
+    <h4>Enter the first number</h4>
+    <input type="number" id="fn">
+    <h4>Enter the second number</h4>
+    <input type="number" id="sn"><br>
+    <button id="plus">+</button>
+    <h4>results=</h4>
+    <p id="demo">ok</p>
+
+
+    <script>
+        var fName=document.getElementById('fn');
+        var sName=document.getElementById('sn');
+        var para=document.getElementById('demo');
+        var plus=document.querySelector('#plus');
+        function fun()
+        {   
+            var n=parseFloat(fName.value);
+            var m=parseFloat(sName.value);
+            var res=m+n;
+            para.innerHTML=res;
+        }
+       plus.addEventListener('click',fun);
+    </script>
+</body>
+</html>

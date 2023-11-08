@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Color Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #buttonContainer {
+            text-align: center;
+        }
+        #header{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="buttonContainer">
+        <h1 id="header">Click the button to change the color! </h1>
+        <button id="colorButton">Click Me!</button>
+    </div>
+
+    <script>
+        var button = document.getElementById("colorButton");
+
+        button.addEventListener("click", function() {
+            var randomColor = getRandomColor();
+            button.style.backgroundColor = randomColor;
+        });
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>

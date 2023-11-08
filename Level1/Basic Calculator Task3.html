@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+</head>
+<body>
+
+<h1>Basic Calculator</h1>
+
+<input type="number" id="firstNumber" placeholder="Enter the first number">
+<input type="number" id="secondNumber" placeholder="Enter the second number">
+
+<button id="calculateButton">Calculate</button>
+
+<p id="result">Result: </p>
+
+<script>
+    const firstNumberInput = document.getElementById("firstNumber");
+    const secondNumberInput = document.getElementById("secondNumber");
+    const resultParagraph = document.getElementById("result");
+
+    const calculateButton = document.getElementById("calculateButton");
+    calculateButton.addEventListener("click", function () {
+   
+        const firstNumber = parseFloat(firstNumberInput.value);
+        const secondNumber = parseFloat(secondNumberInput.value);
+
+        if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+    
+            const result = firstNumber + secondNumber;
+
+            resultParagraph.textContent = "Result: " + result;
+        } else {
+            resultParagraph.textContent = "Please enter valid numbers.";
+        }
+    });
+</script>
+
+</body>
+</html>
